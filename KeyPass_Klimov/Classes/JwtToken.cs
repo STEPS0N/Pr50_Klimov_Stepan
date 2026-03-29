@@ -15,7 +15,7 @@ namespace KeyPass_Klimov.Classes
         /// Секретный ключ для подписи токенов
         /// static означает, что ключ общий для всех экзэмпляров класса
         /// </summary>
-        static byte[] Key = Encoding.UTF8.GetBytes("");
+        static byte[] Key = Encoding.UTF8.GetBytes("PERMAVIAT_THE_BEST!!!!!!!!!!!!!!!!!!!!");
 
         /// <summary>
         /// Генерирует JWT токен для пользователя
