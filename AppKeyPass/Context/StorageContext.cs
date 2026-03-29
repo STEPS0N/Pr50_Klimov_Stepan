@@ -11,7 +11,7 @@ namespace AppKeyPass.Context
 {
     public class StorageContext
     {
-        static string url = "https://localhost:7074/storage/";
+        static string url = "https://localhost:7092/storage/";
 
         public static async Task<List<Storage>?> Get()
         {
