@@ -16,9 +16,19 @@ namespace AppKeyPass
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow init;
+        public static string Token;
+
         public MainWindow()
         {
             InitializeComponent();
+            init = this;
+            OpenPage(new Pages.Login());
+        }
+
+        public void OpenPage(Page page)
+        {
+            frame.Navigate(page);
         }
     }
 }
