@@ -38,5 +38,27 @@ namespace AppKeyPass.Context
             }
             return null;
         }
+
+        public static async Task<bool> Registration(string name, string surname, string login, string password)
+        {
+            using (HttpClient Client = new HttpClient())
+            {
+                using (HttpRequestMessage Request = new HttpRequestMessage(HttpMethod.Post, url + "registration"))
+                {
+                    Dictionary<string, string> FormData = new Dictionary<string, string>
+                    {
+                        ["name"] = name,
+                        ["surname"] = surname,
+                        ["login"] = login,
+                        ["password"] = password
+                    };
+                    FormUrlEncodedContent Content = new FormUrlEncodedContent(FormData);
+                    Request.Content = Content;
+                    var Response = await Client.SendAsync(Request);
+
+                    return Response.StatusCode == System.Net.HttpStatusCode.OK;
+                }
+            }
+        }
     }
 }

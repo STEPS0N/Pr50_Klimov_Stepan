@@ -45,16 +45,21 @@ namespace AppKeyPass.Pages
         {
             if (string.IsNullOrEmpty(tbLogin.Text))
             {
-                MessageBox.Show("Необходимо указать логин пользователя");
+                MessageBox.Show("Необходимо указать ваш логин");
                 return;
             }
             if (string.IsNullOrEmpty(tbPassword.Password))
             {
-                MessageBox.Show("Необходимо указать пароль пользователя");
+                MessageBox.Show("Необходимо указать ваш пароль");
                 return;
             }
 
             Auth(tbLogin.Text, tbPassword.Password);
+        }
+
+        private void ToRegistration(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.OpenPage(new Pages.Registration());
         }
     }
 }

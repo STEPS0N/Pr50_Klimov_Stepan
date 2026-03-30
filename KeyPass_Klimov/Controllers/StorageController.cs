@@ -79,6 +79,7 @@ namespace KeyPass_Klimov.Controllers
                 databaseManager.SaveChanges();
 
                 storage.User = null;
+                storage.Password = null;
 
                 return StatusCode(200, storage);
             }
